@@ -15,7 +15,7 @@ describe('main', function () {
         app = createApp();
         return app.start();
     });
-
+    
     beforeEach(function () {
         chaiAsPromised.transferPromiseness = app.transferPromiseness;
     });

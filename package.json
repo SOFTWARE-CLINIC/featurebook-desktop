@@ -6,7 +6,8 @@
   "main": "main.js",
   "scripts": {
     "start": "./node_modules/.bin/electron .",
-    "test": "mocha test",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "mocha test",
     "test:e2e": "mocha e2e"
   },
   "repository": {
