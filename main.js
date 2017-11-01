@@ -11,22 +11,21 @@ function createWindow() {
     protocol: 'file',
     slashes: true
   }));
-  win.on('close', () => {
+  win.on('close', function () {
     win = null;
-  })
+  });
 }
 
 app.on('ready', createWindow);
 
-app.on('window-all-closed', () => {
+app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
-app.on('activate', () => {
+app.on('activate', function () {
   if (win === null) {
     createWindow();
   }
 });
-

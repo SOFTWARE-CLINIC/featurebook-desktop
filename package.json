@@ -28,5 +28,8 @@
     "electron": "1.7.9",
     "mocha": "4.0.1",
     "spectron": "3.7.2"
+  },
+  "dependencies": {
+    "featurebook-api": "1.0.0-alpha.4"
   }
 }
