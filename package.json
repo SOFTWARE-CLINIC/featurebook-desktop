@@ -1,20 +1,32 @@
 {
   "name": "featurebook-desktop",
-  "version": "1.0.0",
+  "productName": "FeatureBook",
+  "version": "0.0.1-alpha.1",
   "description": "FeatureBook Desktop Application",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "./node_modules/.bin/electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test",
+    "test:e2e": "mocha e2e"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SOFTWARE-CLINIC/featurebook-desktop.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "featurebook",
+    "electron"
+  ],
+  "author": {
+    "name": "Daniel Pacak",
+    "email": "pacak.daniel@gmail.com"
+  },
   "license": "MIT",
   "devDependencies": {
-    "electron": "1.7.8"
+    "chai": "4.1.2",
+    "chai-as-promised": "7.1.1",
+    "electron": "1.7.9",
+    "mocha": "4.0.1",
+    "spectron": "3.7.2"
   }
 }
