@@ -1,0 +1,11 @@
+<div class="featurebook-feature">
+
+  <div class="featurebook-tag" ng-repeat="tag in featureResponse.data.tags track by $index">{{tag.name}}</div>
+  <div class="featurebook-feature-name">{{gherkinDocument.feature.keyword}}: {{gherkinDocument.feature.name}}</div>
+  <div class="featurebook-feature-description featurebook-markdown"
+       ng-bind-html="gherkinDocument.feature.description"></div>
+
+  <gherkin-scenario ng-model="scenario"
+                    ng-repeat="scenario in gherkinDocument.feature.children"></gherkin-scenario>
+
+</div>
