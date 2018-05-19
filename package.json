@@ -26,11 +26,14 @@
   "devDependencies": {
     "chai": "4.1.2",
     "chai-as-promised": "7.1.1",
-    "electron": "1.8.4",
-    "mocha": "5.0.4",
+    "electron": "2.0.1",
+    "mocha": "5.1.1",
     "spectron": "3.8.0"
   },
   "dependencies": {
-    "featurebook-api": "1.0.0-alpha.5"
+    "featurebook-api": "1.0.0-alpha.5",
+    "featurebook-pdf": "1.0.0-alpha.4",
+    "featurebook-html": "1.0.0-alpha.3",
+    "mkdirp": "0.5.1"
   }
 }
