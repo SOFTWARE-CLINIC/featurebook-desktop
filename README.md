@@ -4,9 +4,10 @@
 [![dependencies Status](https://david-dm.org/SOFTWARE-CLINIC/featurebook-desktop/status.svg)](https://david-dm.org/SOFTWARE-CLINIC/featurebook-desktop)
 > FeatureBook Desktop Application
 
+![Screenshot](README/featurebook-desktop.png)
+
 ## Running locally
 
 ```
 $ npm install && npm start
 ```
-

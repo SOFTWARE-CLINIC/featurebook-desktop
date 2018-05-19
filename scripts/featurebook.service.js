@@ -1,8 +1,6 @@
 (function () {
   'use strict';
 
-  // TODO Based on the opened spec; do not hard code.
-  const specDir = '/Users/dpacak/development/github/featurebook-examples/time_tracking';
   const nodePath = require('path');
   const featurebook = require('featurebook-api');
 
@@ -12,6 +10,9 @@
   featureBookServiceFactory.$inject = ['$q'];
 
   function featureBookServiceFactory($q) {
+
+    const state = getStateSync();
+
     return {
       getMetadata: getMetadata,
       getSummary: getSummary,
@@ -20,16 +21,16 @@
     };
 
     function getMetadata() {
-      return $q(function (resolve, reject) {
-        featurebook.readMetadata(specDir, function (err, response) {
+      return $q(function (resolve) {
+        featurebook.readMetadata(state.specDir, function (err, response) {
           resolve(response);
         });
       });
     }
 
     function getSpecTree() {
-      return $q(function (resolve, reject) {
-        featurebook.readSpecTree(specDir, function (err, response) {
+      return $q(function (resolve) {
+        featurebook.readSpecTree(state.specDir, function (err, response) {
           resolve(response.children);
         });
       });
@@ -37,8 +38,8 @@
     }
 
     function getFeature(featurePath) {
-      return $q(function (resolve, reject) {
-        featurebook.readFeature(nodePath.join(specDir, featurePath), function (err, response) {
+      return $q(function (resolve) {
+        featurebook.readFeature(nodePath.join(state.specDir, featurePath), function (err, response) {
           resolve(response);
         });
       });
@@ -47,7 +48,7 @@
 
     function getSummary(path) {
       return $q(function (resolve, reject) {
-        featurebook.readSummary(nodePath.join(specDir, path), function (err, response) {
+        featurebook.readSummary(nodePath.join(state.specDir, path), function (err, response) {
           if (err) {
             return reject(null);
           }
@@ -56,6 +57,12 @@
       });
     }
 
+  }
+
+  function getStateSync() {
+    const {app} = require('electron').remote;
+    const applicationState = require('./application_state');
+    return applicationState.readSync(app.getPath('appData'));
   }
 
 })();
