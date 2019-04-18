@@ -2,8 +2,6 @@ const {
   app,
   BrowserWindow
 } = require('electron');
-const url = require('url');
-const path = require('path');
 const ApplicationMenu = require('./application_menu');
 
 class Application {
@@ -32,11 +30,7 @@ class Application {
     let me = this;
     me.win = new BrowserWindow({width: 800, height: 600});
     ApplicationMenu.create(this.win);
-    me.win.loadURL(url.format({
-      pathname: path.join(__dirname, 'index.html'),
-      protocol: 'file',
-      slashes: true
-    }));
+    me.win.loadURL(`file://${__dirname}/index.jade`);
 
     me.win.on('close', function () {
       me.win = null;

@@ -1,0 +1,38 @@
+doctype html
+html(data-ng-app='scFeatureBook')
+  head(lang='en')
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title FeatureBook
+    link(rel='stylesheet', href='styles/featurebook.css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-sanitize.js')
+    script(src='scripts/featurebook.module.js')
+    script(src='scripts/featurebook.routes.js')
+    script(src='scripts/featurebook.controller.js')
+    script(src='scripts/feature-viewer.controller.js')
+    script(src='scripts/summary.controller.js')
+    script(src='scripts/featurebook.service.js')
+    script(src='scripts/person.directive.js')
+    script(src='scripts/feature-tree.directive.js')
+    script(src='scripts/feature-node.directive.js')
+    script(src='scripts/gherkin-scenario.directive.js')
+    script(src='scripts/gherkin-step.directive.js')
+    script(src='scripts/gherkin-data-table.directive.js')
+    script(src='scripts/encode-uri-component.filter.js')
+    script(src='scripts/highlight-gherkin-variables.filter.js')
+  body
+    .featurebook(data-ng-controller='FeatureBookController', data-ng-cloak='')
+      .featurebook-metadata
+        .featurebook-title
+          a(data-ng-href='#/summary/') {{metadata.title}} {{metadata.version}}
+        .featurebook-authors
+          span(data-ng-repeat='author in metadata.authors')
+            person(ng-model='author')
+        .featurebook-contributors
+          span(data-ng-repeat='contributor in metadata.contributors')
+            person(ng-model='contributor')
+      aside.featurebook-features-tree
+        feature-tree(ng-model='featuresTree')
+      main.featurebook-container(data-ng-view='')

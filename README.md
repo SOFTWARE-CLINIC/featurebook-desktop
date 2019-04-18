@@ -14,3 +14,7 @@ $ npm install && npm start
 ```
 
 ![Screenshot](README/featurebook-desktop.png)
+
+## Links
+
+1. https://github.com/electron-userland/electron-compile
