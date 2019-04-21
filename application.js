@@ -29,6 +29,7 @@ class Application {
   _createWindow() {
     let me = this;
     me.win = new BrowserWindow({width: 800, height: 600});
+    //me.win.openDevTools();
     ApplicationMenu.create(this.win);
     me.win.loadURL(`file://${__dirname}/index.jade`);
 
