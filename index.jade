@@ -23,16 +23,21 @@ html(data-ng-app='scFeatureBook')
     script(src='scripts/encode-uri-component.filter.js')
     script(src='scripts/highlight-gherkin-variables.filter.js')
   body
-    .featurebook(data-ng-controller='FeatureBookController', data-ng-cloak='')
-      .featurebook-metadata
-        .featurebook-title
-          a(data-ng-href='#/summary/') {{metadata.title}} {{metadata.version}}
-        .featurebook-authors
-          span(data-ng-repeat='author in metadata.authors')
-            person(ng-model='author')
-        .featurebook-contributors
-          span(data-ng-repeat='contributor in metadata.contributors')
-            person(ng-model='contributor')
-      aside.featurebook-features-tree
-        feature-tree(ng-model='featuresTree')
-      main.featurebook-container(data-ng-view='')
+    #application
+      .loading Loading ...
+    script.
+      require('./renderer');
+
+  .featurebook(data-ng-controller='FeatureBookController', data-ng-cloak='')
+    .featurebook-metadata
+      .featurebook-title
+        a(data-ng-href='#/summary/') {{metadata.title}} {{metadata.version}}
+      .featurebook-authors
+        span(data-ng-repeat='author in metadata.authors')
+          person(ng-model='author')
+      .featurebook-contributors
+        span(data-ng-repeat='contributor in metadata.contributors')
+          person(ng-model='contributor')
+    aside.featurebook-features-tree
+      feature-tree(ng-model='featuresTree')
+    main.featurebook-container(data-ng-view='')

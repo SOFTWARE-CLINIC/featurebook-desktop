@@ -23,20 +23,28 @@
     "email": "pacak.daniel@gmail.com"
   },
   "license": "MIT",
+  "dependencies": {
+    "featurebook-api": "1.0.0-alpha.5",
+    "featurebook-html": "1.0.0-alpha.3",
+    "featurebook-pdf": "1.0.0-alpha.4",
+    "mkdirp": "0.5.1",
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  },
   "devDependencies": {
+    "babel-plugin-dynamic-import-node": "2.2.0",
+    "babel-plugin-syntax-dynamic-import": "6.18.0",
+    "babel-plugin-transform-async-to-generator": "6.24.1",
+    "babel-plugin-transform-es2015-classes": "6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
     "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
     "electron": "4.1.4",
     "electron-prebuilt-compile": "4.0.0",
     "mocha": "6.1.3",
     "spectron": "3.8.0"
-  },
-  "dependencies": {
-    "featurebook-api": "1.0.0-alpha.5",
-    "featurebook-pdf": "1.0.0-alpha.4",
-    "featurebook-html": "1.0.0-alpha.3",
-    "mkdirp": "0.5.1"
   }
 }
